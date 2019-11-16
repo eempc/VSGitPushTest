@@ -9,17 +9,14 @@
 	* %APPDATA%\Microsoft\UserSecrets\<user_secrets_id>\secrets.json
 
 3. Startup.cs quick method
-..* 
-31. private (static) string _moviesApiKey = null;
-32. _moviesApiKey = Configuration["Movies:ServiceApiKey"];
+	* private (static) string _moviesApiKey = null;
+	* _moviesApiKey = Configuration["Movies:ServiceApiKey"];
 
-4. POCO method - create a class MovieSettings mapped to the JSON object
-..* 
-41. MovieSettings moviesConfig = Configuration.GetSection("Movies").Get<MovieSettings>();
-42. _moviesApiKey2 = moviesConfig.ServiceApiKey;
+4. POCO method - create a class MovieSettings mapped to the JSON object 
+	* MovieSettings moviesConfig = Configuration.GetSection("Movies").Get<MovieSettings>();
+	* _moviesApiKey2 = moviesConfig.ServiceApiKey;
 
 5. Access your secret key e.g. Privacy PageModel
-..* 
-51. public string secretKey;
-52. public void OnGet() => secretKey = Startup._moviesApiKey2;
-53. <h2>@Model.secretKey</h2> <-- Don't do this 
+	* public string secretKey;
+	* public void OnGet() => secretKey = Startup._moviesApiKey2;
+	* <h2>@Model.secretKey</h2> <-- Don't do this 
