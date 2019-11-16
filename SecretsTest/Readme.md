@@ -4,9 +4,9 @@
 
 1. dotnet user-secrets init --project <Name>
 2. Add keys 
-* dotnet user-secrets set "Movies:ServiceApiKey" "12345"
-* Right click solution, select manage user secrets, edit the json that pops up
-* %APPDATA%\Microsoft\UserSecrets\<user_secrets_id>\secrets.json
+	* dotnet user-secrets set "Movies:ServiceApiKey" "12345"
+	* Right click solution, select manage user secrets, edit the json that pops up
+	* %APPDATA%\Microsoft\UserSecrets\<user_secrets_id>\secrets.json
 
 3. Startup.cs quick method
 ..* 
