@@ -28,8 +28,7 @@ namespace SecretsTest {
             _moviesApiKey = Configuration["Movies:ServiceApiKey"];
 
             // Another method which is mapped to an object like how a JSON can be deserialised into an object:
-            MovieSettings moviesConfig = Configuration.GetSection("Movies")
-                                .Get<MovieSettings>();
+            MovieSettings moviesConfig = Configuration.GetSection("Movies").Get<MovieSettings>();
             _moviesApiKey2 = moviesConfig.ServiceApiKey;
         }
 
