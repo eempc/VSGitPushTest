@@ -19,4 +19,4 @@
 5. Access your secret key e.g. Privacy PageModel
 	* public string secretKey;
 	* public void OnGet() => secretKey = Startup._moviesApiKey2;
-	* {::nomarkdown}<h2>@Model.secretKey</h2>{:/} <-- Don't do this 
+	* ```html<h2>@Model.secretKey</h2>``` <-- Don't do this 
