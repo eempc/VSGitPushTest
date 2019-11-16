@@ -2,7 +2,7 @@
 
 [Link](https://docs.microsoft.com/en-us/aspnet/core/security/app-secrets?view=aspnetcore-3.0&tabs=windows)
 
-1. dotnet user-secrets init --project <Name>
+1. dotnet user-secrets init --project Name
 2. Add keys 
 	* dotnet user-secrets set "Movies:ServiceApiKey" "12345"
 	* Right click solution, select manage user secrets, edit the json that pops up
@@ -19,4 +19,4 @@
 5. Access your secret key e.g. Privacy PageModel
 	* public string secretKey;
 	* public void OnGet() => secretKey = Startup._moviesApiKey2;
-	* <h2>@Model.secretKey</h2> <-- Don't do this 
+	* {::nomarkdown}<h2>@Model.secretKey</h2>{:/} <-- Don't do this 
