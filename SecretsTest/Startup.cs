@@ -24,12 +24,17 @@ namespace SecretsTest {
         // This method gets called by the runtime. Use this method to add services to the container.
         public void ConfigureServices(IServiceCollection services) {
             services.AddRazorPages();
-            // Initialise your secrets here
-            _moviesApiKey = Configuration["Movies:ServiceApiKey"];
-
-            // Another method which is mapped to an object like how a JSON can be deserialised into an object:
-            MovieSettings moviesConfig = Configuration.GetSection("Movies").Get<MovieSettings>();
-            _moviesApiKey2 = moviesConfig.ServiceApiKey;
+        
+            try {
+                // Initialise your secrets here
+                _moviesApiKey = Configuration["Movies:ServiceApiKey"];
+                // Another method which is mapped to an object like how a JSON can be deserialised into an object:
+                MovieSettings moviesConfig = Configuration.GetSection("Movies").Get<MovieSettings>();
+                _moviesApiKey2 = moviesConfig.ServiceApiKey;
+            } catch (Exception e) {
+                _moviesApiKey = "fail";
+                _moviesApiKey2 = "fail";
+            }
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
@@ -53,11 +58,11 @@ namespace SecretsTest {
                 endpoints.MapRazorPages();
             });
 
-            string result = string.IsNullOrEmpty(_moviesApiKey) ? "Null" : "Not Null";
-            app.Run(async (context) =>
-            {
-                await context.Response.WriteAsync($"Secret is {result}");
-            });
+            //string result = string.IsNullOrEmpty(_moviesApiKey) ? "Null" : "Not Null";
+            //app.Run(async (context) =>
+            //{
+            //    await context.Response.WriteAsync($"Secret is {result}");
+            //});
         }
     }
 

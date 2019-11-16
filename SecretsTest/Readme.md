@@ -1,5 +1,7 @@
 ﻿# Secrets - the quick tutorial
 
+Secrets are only for development, not production
+
 [Link](https://docs.microsoft.com/en-us/aspnet/core/security/app-secrets?view=aspnetcore-3.0&tabs=windows)
 
 1. dotnet user-secrets init --project Name
@@ -19,4 +21,8 @@
 5. Access your secret key e.g. Privacy PageModel
 	* public string secretKey;
 	* public void OnGet() => secretKey = Startup._moviesApiKey2;
-	* ```html<h2>@Model.secretKey</h2>``` <-- Don't do this 
+	* ```<h2>@Model.secretKey</h2>``` <-- Don't do this 
+
+# For production, you will need Azure Vault
+
+[Link1](https://stackoverflow.com/questions/40131672/storing-production-secrets-in-asp-net-core)
