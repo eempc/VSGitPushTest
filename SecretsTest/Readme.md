@@ -23,6 +23,6 @@ Secrets are only for development, not production
 	* public void OnGet() => secretKey = Startup._moviesApiKey2;
 	* ```<h2>@Model.secretKey</h2>``` <-- Don't do this 
 
-# For production, you will need Azure Vault
+# For production, you will need Azure Vault to hold passwords securely
 
 [Link1](https://stackoverflow.com/questions/40131672/storing-production-secrets-in-asp-net-core)
