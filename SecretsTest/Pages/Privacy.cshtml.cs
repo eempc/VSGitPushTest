@@ -10,11 +10,15 @@ namespace SecretsTest.Pages {
     public class PrivacyModel : PageModel {
         private readonly ILogger<PrivacyModel> _logger;
 
+        // Secret key is here
+        public string secretKey;
+
         public PrivacyModel(ILogger<PrivacyModel> logger) {
             _logger = logger;
         }
 
         public void OnGet() {
+            secretKey = Startup._moviesApiKey2;
         }
     }
 }
