@@ -13,8 +13,8 @@ using Microsoft.Extensions.Hosting;
 namespace SecretsTest {
     public class Startup {
         // Declare your secrets here
-        private string _moviesApiKey = null;
-        public static string _moviesApiKey2 = null;
+        //private string _moviesApiKey = null;
+        //public static string _moviesApiKey2 = null;
         public Startup(IConfiguration configuration) {
             Configuration = configuration;
         }
@@ -25,16 +25,16 @@ namespace SecretsTest {
         public void ConfigureServices(IServiceCollection services) {
             services.AddRazorPages();
         
-            try {
-                // Initialise your secrets here
-                _moviesApiKey = Configuration["Movies:ServiceApiKey"];
-                // Another method which is mapped to an object like how a JSON can be deserialised into an object:
-                MovieSettings moviesConfig = Configuration.GetSection("Movies").Get<MovieSettings>();
-                _moviesApiKey2 = moviesConfig.ServiceApiKey;
-            } catch (Exception e) {
-                _moviesApiKey = "fail";
-                _moviesApiKey2 = "fail";
-            }
+            //try {
+            //    // Initialise your secrets here
+            //    _moviesApiKey = Configuration["Movies:ServiceApiKey"];
+            //    // Another method which is mapped to an object like how a JSON can be deserialised into an object:
+            //    MovieSettings moviesConfig = Configuration.GetSection("Movies").Get<MovieSettings>();
+            //    _moviesApiKey2 = moviesConfig.ServiceApiKey;
+            //} catch (Exception e) {
+            //    _moviesApiKey = "fail";
+            //    _moviesApiKey2 = "fail";
+            //}
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
